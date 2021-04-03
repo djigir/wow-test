@@ -40,7 +40,12 @@ class SiteController extends Controller
         $model = new Signup();
         $query = Post::find();
         $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => self::PER_PAGE]);
+        $pagination = new Pagination([
+            'totalCount' => $count,
+            'pageSize' => self::PER_PAGE,
+            'forcePageParam' => false,
+            'pageSizeParam' => false,
+        ]);
         $posts = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();

@@ -53,6 +53,8 @@ $config = [
                 '/' => 'site/index',
                 'show' => 'post/show',
                 'edit' => 'post/edit',
+                'delete' => 'post/delete',
+                'logout' => 'site/logout',
             ],
         ],
 

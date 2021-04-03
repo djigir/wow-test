@@ -17,7 +17,7 @@ class PostController extends Controller
 
             if (!empty(\Yii::$app->request->bodyParams)) {
                 $post_model->createPost(\Yii::$app->request->bodyParams['Post']);
-                return $this->redirect('site/index');
+                return $this->redirect('/');
             }
 
             return $this->render('edit', ['model' => $post_model, 'post' => $id]);
@@ -58,6 +58,6 @@ class PostController extends Controller
         if ($post->author_id == \Yii::$app->user->identity->id) {
             $post->delete();
         }
-        return $this->redirect('post/show');
+        return $this->redirect('/');
     }
 }
