@@ -11,11 +11,11 @@ class PostController extends Controller
     public function actionEdit($id)
     {
         /* create*/
-        if ($id == 'create'){
+        if ($id == 'create') {
             $post_model = new Post();
 
 
-            if (!empty(\Yii::$app->request->bodyParams)){
+            if (!empty(\Yii::$app->request->bodyParams)) {
                 $post_model->createPost(\Yii::$app->request->bodyParams['Post']);
                 return $this->redirect('site/index');
             }
@@ -24,7 +24,7 @@ class PostController extends Controller
         }
 
         /* edit */
-        if ($id != 'create'){
+        if ($id != 'create') {
             $post = Post::findOne($id);
 
             if (!empty(\Yii::$app->request->bodyParams)) {
@@ -55,7 +55,7 @@ class PostController extends Controller
     public function actionDelete($id)
     {
         $post = Post::findOne($id);
-        if ($post->author_id == \Yii::$app->user->identity->id){
+        if ($post->author_id == \Yii::$app->user->identity->id) {
             $post->delete();
         }
         return $this->redirect('post/show');
