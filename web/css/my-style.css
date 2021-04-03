@@ -1,0 +1,22 @@
+.sing-in {
+    margin-top: 1.5rem;
+}
+
+.sign-headline {
+    text-align: center;
+}
+
+.post-headline {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.create-post_btn {
+    margin-top: 2rem;
+}
+
+.pagination {
+    margin-top: 4rem;
+}
